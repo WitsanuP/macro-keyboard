@@ -1,7 +1,9 @@
 - arduino pro micro
 - direct switch
 
-vertions
-- vertion 1
+version
+- version 1
   - button switch
-  - rotary encoder 
+  - rotary encoder
+- version 2
+  - matrix switch
