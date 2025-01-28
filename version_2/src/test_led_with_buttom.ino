@@ -5,12 +5,20 @@
 const int colPins[] = {14, 16, 10}; // พอร์ตคอลัมน์
 const int rowPins[] = {15, A0, A1}; // พอร์ตรูป
 
-// กำหนดแผนผังคำของคีย์บอร์ด
-const char* keys[3][3] = {
+// กำหนดแผนผังคำของคีย์บอร์ดใน data
+const char* data[3][3] = {
   {"gap", "dog", "key"},
   {"sad", "lov", "fuc"},
   {"kuy", "cat", "OK"}
 };
+// ดึงข้อมูลจาก data มาเก็บในตัวแปร key
+//const char* key = data[row][col];
+const char* key[3][3] = {
+  {data[0][0], data[1][0], data[2][0]}, 
+  {data[0][1], data[1][1], data[2][1]}, 
+  {data[0][2], data[1][2], data[2][2]}
+};
+
 
 // กำหนดพินของ SK6812 และจำนวน LED
 #define LED_PIN A2
@@ -55,8 +63,10 @@ void loop() {
       if (digitalRead(rowPins[row]) == LOW) { // ตรวจจับปุ่มที่ถูกกด
         int ledIndex = ledMapping[row][col]; // ใช้ตาราง mapping เพื่อหา LED ที่สัมพันธ์กับปุ่ม
 
+
+
         // ส่งคำแทนตัวเลขไปยังคอมพิวเตอร์
-        Keyboard.print(keys[row][col]);
+        Keyboard.print(key[row][col]);
         Keyboard.write('\n'); // ส่ง Enter หลังจากพิมพ์คำ
 
         // เปิดไฟ LED ที่สัมพันธ์กับปุ่ม
@@ -76,3 +86,4 @@ void loop() {
     digitalWrite(colPins[col], HIGH);
   }
 }
+
