@@ -1,0 +1,8 @@
+ROT_A 8     
+ROT_B 9     
+ROT_SW 7    
+
+col_Pins = {14, 16, 10}
+row_Pins = {15, A0, A1}
+
+LED_PIN A2
