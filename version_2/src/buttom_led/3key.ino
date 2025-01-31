@@ -1,3 +1,4 @@
+//ไฟจะติดเฉพาะขณะเวลาที่กด
 #include <Keyboard.h>
 #include <Adafruit_NeoPixel.h>
 
